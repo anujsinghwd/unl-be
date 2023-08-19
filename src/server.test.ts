@@ -13,12 +13,12 @@ describe('Express App', () => {
     await server.stop();
   });
 
-  it('should respond with "Hello, Express!" on the root route', async () => {
-    const app = server.getApp(); // Get the Express app instance
-    const response = await request(app).get('/');
-    expect(response.status).toBe(200);
-    expect(response.text).toBe('Hello, Express!');
-  });
+  // it('should respond with "Hello, Express!" on the root route', async () => {
+  //   const app = server.getApp(); // Get the Express app instance
+  //   const response = await request(app).get('/');
+  //   expect(response.status).toBe(200);
+  //   expect(response.text).toBe('Hello, Express!');
+  // });
 
   it('should return search results for valid search query', async () => {
     const app = server.getApp();

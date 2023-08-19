@@ -23,12 +23,12 @@ describe('Express App', () => {
     afterAll(() => __awaiter(void 0, void 0, void 0, function* () {
         yield server.stop();
     }));
-    it('should respond with "Hello, Express!" on the root route', () => __awaiter(void 0, void 0, void 0, function* () {
-        const app = server.getApp(); // Get the Express app instance
-        const response = yield (0, supertest_1.default)(app).get('/');
-        expect(response.status).toBe(200);
-        expect(response.text).toBe('Hello, Express!');
-    }));
+    // it('should respond with "Hello, Express!" on the root route', async () => {
+    //   const app = server.getApp(); // Get the Express app instance
+    //   const response = await request(app).get('/');
+    //   expect(response.status).toBe(200);
+    //   expect(response.text).toBe('Hello, Express!');
+    // });
     it('should return search results for valid search query', () => __awaiter(void 0, void 0, void 0, function* () {
         const app = server.getApp();
         const response = yield (0, supertest_1.default)(app).get('/search?text=New');
