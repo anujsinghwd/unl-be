@@ -4,6 +4,9 @@ import fs from "fs";
 import csvParser from "csv-parser";
 import path from "path";
 import http, { Server as HttpServer } from "http";
+import helmet from 'helmet';
+import cors from 'cors';
+
 
 class Server {
   private app: Express;
@@ -24,6 +27,8 @@ class Server {
     dotenv.config(); // Load environment variables from '.env' file
     this.app.use(express.json()); // Parse JSON request bodies
     this.app.use(express.urlencoded({ extended: true })); // Parse URL-encoded request bodies
+    this.app.use(cors());
+    this.app.use(helmet());
   }
 
   // Define application routes
