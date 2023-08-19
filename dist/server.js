@@ -25,7 +25,10 @@ class Server {
         dotenv_1.default.config(); // Load environment variables from '.env' file
         this.app.use(express_1.default.json()); // Parse JSON request bodies
         this.app.use(express_1.default.urlencoded({ extended: true })); // Parse URL-encoded request bodies
-        this.app.use((0, cors_1.default)());
+        this.app.use((0, cors_1.default)({
+            origin: "*",
+            methods: "GET",
+        }));
         this.app.use((0, helmet_1.default)());
     }
     // Define application routes
