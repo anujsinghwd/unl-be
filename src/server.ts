@@ -6,6 +6,7 @@ import path from "path";
 import http, { Server as HttpServer } from "http";
 import helmet from "helmet";
 import cors from "cors";
+import calculateDistances from "./helpers/calculate-distance";
 
 class Server {
   private app: Express;
@@ -69,6 +70,14 @@ class Server {
           res.json(results); // Respond with the search results
         });
     });
+
+    this.app.post("/distance-matrix", async (req: Request, res: Response) => {
+        const latitudes: number[] = req.body.latitudes;
+        const longitudes: number[] = req.body.longitudes;
+        const unit: string  = req?.body?.unit || 'imperial';
+        const distances = await calculateDistances(latitudes, longitudes, unit);
+        res.json(distances);
+    });
   }
 
   // Start the Express server
@@ -93,4 +102,3 @@ const server = new Server();
 server.start();
 
 // export default Server;
-
