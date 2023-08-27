@@ -26,6 +26,3 @@
     ```bash
     npm run build
 
-## Contributing
-Feel free to contribute to this project by submitting pull requests or reporting issues.
-
