@@ -6,7 +6,7 @@ describe("Root Route", () => {
 
   beforeAll(async () => {
     server = new Server();
-    const port = 0;
+    const port = 10;
     server.start(port);
   });
 
