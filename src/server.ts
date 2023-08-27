@@ -39,7 +39,7 @@ export class Server {
   }
 
   // Start the Express server
-  public start(port: number = Number(process.env.PORT)): void {
+  public start(port: number = (Number(process.env.PORT) || 0)): void {
     this.server = http.createServer(this.app); // Create the server instance
     this.server.listen(port, () => {
       // console.log(`Server is running on port ${process.env.PORT}`);
