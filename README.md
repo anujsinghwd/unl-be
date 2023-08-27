@@ -19,10 +19,13 @@
 3. Create a `.env` file in the project root directory and add the following content:
     ```bash
     PORT=3000
-4. To start the development server:
+5. To start the development server:
     ```bash
     npm run dev
-5. To build the project:
+6. To test:
+    ```bash
+    npm run test
+7. To build the project:
     ```bash
     npm run build
 
